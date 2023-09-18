@@ -1,0 +1,23 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Sakila.Domain;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sakila.Persistent
+{
+    public class SakilaContext : AuditTableDbContext
+    {
+        public SakilaContext(DbContextOptions options) : base(options)
+        {
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(SakilaContext).Assembly);
+        }
+        public DbSet<Actor> actor { get; set; }
+    }
+}

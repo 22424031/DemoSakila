@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  demosakila.api:
+    image: ${DOCKER_REGISTRY-}demosakilaapi
+    build:
+      context: .
+      dockerfile: DemoSakila/Dockerfile
+  mysql:
+    hostname: 17.0.0.1
+    user: trutran
+    image: mariadb:10.1.19
+    ports:
+      - 3307:3306
+    volumes:
+      - ./mysql:/var/lib/my-vol
+    environment:
+     MYSQL_ROOT_PASSWORD: wp

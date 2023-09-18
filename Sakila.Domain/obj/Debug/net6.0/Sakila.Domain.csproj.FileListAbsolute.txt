@@ -1,0 +1,12 @@
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\bin\Debug\net6.0\Sakila.Domain.deps.json
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\bin\Debug\net6.0\Sakila.Domain.dll
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\bin\Debug\net6.0\Sakila.Domain.pdb
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\obj\Debug\net6.0\Sakila.Domain.csproj.AssemblyReference.cache
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\obj\Debug\net6.0\Sakila.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\obj\Debug\net6.0\Sakila.Domain.AssemblyInfoInputs.cache
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\obj\Debug\net6.0\Sakila.Domain.AssemblyInfo.cs
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\obj\Debug\net6.0\Sakila.Domain.csproj.CoreCompileInputs.cache
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\obj\Debug\net6.0\Sakila.Domain.dll
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\obj\Debug\net6.0\refint\Sakila.Domain.dll
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\obj\Debug\net6.0\Sakila.Domain.pdb
+D:\Tai lieu\Lap trinh hien dai\Sakila.Domain\obj\Debug\net6.0\ref\Sakila.Domain.dll
