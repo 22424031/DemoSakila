@@ -31,3 +31,37 @@ D:\Tai lieu\Lap trinh hien dai\DemoSakila\bin\Debug\Sakila.Persistent.pdb
 D:\Tai lieu\Lap trinh hien dai\DemoSakila\bin\Debug\Sakila.Domain.pdb
 D:\Tai lieu\Lap trinh hien dai\DemoSakila\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 D:\Tai lieu\Lap trinh hien dai\DemoSakila\obj\Debug\docker-compose.dcproj.CopyComplete
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\DemoSakila.API.deps.json
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\DemoSakila.API.runtimeconfig.json
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\appsettings.Development.json
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\appsettings.json
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\DemoSakila.API.exe
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\DemoSakila.API.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\MediatR.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Sakila.Application.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Microsoft.Extensions.Configuration.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Sakila.Persistent.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\MediatR.Contracts.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\AutoMapper.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Sakila.Domain.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Microsoft.EntityFrameworkCore.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Microsoft.OpenApi.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\MySqlConnector.dll
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\DemoSakila.API.pdb
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Sakila.Application.pdb
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Sakila.Persistent.pdb
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\bin\Debug\Sakila.Domain.pdb
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\obj\Debug\docker-compose.dcproj.CopyComplete

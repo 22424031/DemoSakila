@@ -7,12 +7,12 @@ services:
       context: .
       dockerfile: DemoSakila/Dockerfile
   mysql:
-    hostname: 17.0.0.1
+    hostname: 127.0.0.1
     user: trutran
-    image: mariadb:10.1.19
+    image: container-registry.oracle.com/mysql/community-server:8.0
     ports:
-      - 3307:3306
+        - 3307:3306
     volumes:
-      - ./mysql:/var/lib/my-vol
+        - ./mysql:/var/lib/my-vol
     environment:
-     MYSQL_ROOT_PASSWORD: wp
+        MYSQL_ROOT_PASSWORD: wp

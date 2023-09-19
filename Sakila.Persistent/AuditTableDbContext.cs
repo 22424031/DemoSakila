@@ -23,20 +23,11 @@ namespace Sakila.Persistent
                 if (username == null) username = "system";
                // entry.Entity.last_updateBy = username;
                 entry.Entity.last_update = DateTime.Now;
-
-                //if(entry.State == EntityState.Added)
-                //{
-                //    entry.Entity.CreatedBy = username;
-                //    entry.Entity.CreatedOn = DateTime.Now;
-                //}
-                //if(entry.State == EntityState.Deleted)
-                //{
-                //    entry.Entity.DeleteBy = username;
-                //    entry.Entity.DeleteOn = DateTime.Now;
-                //}
                 flatsave = await base.SaveChangesAsync();
                 entry.State = EntityState.Detached;
+                return flatsave;
             }
+            flatsave = await base.SaveChangesAsync();
             return flatsave;
         }
     }

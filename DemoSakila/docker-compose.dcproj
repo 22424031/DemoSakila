@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>93e98b42-b045-4460-90ab-fc90b4a5dc27</ProjectGuid>
+    <ProjectGuid>a5a938f1-7ae9-45a1-ae7b-fa485f2e3e3b</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>demosakila.api</DockerServiceName>

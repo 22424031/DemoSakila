@@ -11,6 +11,6 @@ namespace Sakila.Application.Dtos.Actors
         public int Actor_id { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
-        public DateTime Last_update { get; set; }
+        public DateTime Last_Update { get; set; }
     }
 }

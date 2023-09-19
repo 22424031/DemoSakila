@@ -507,11 +507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Tai lieu\\Lap trinh hien dai\\Sakila.Application\\Sakila.Application.csproj",
+      "projectUniqueName": "D:\\Tai lieu\\Lap trinh hien dai\\git public\\Sakila.Application\\Sakila.Application.csproj",
       "projectName": "Sakila.Application",
-      "projectPath": "D:\\Tai lieu\\Lap trinh hien dai\\Sakila.Application\\Sakila.Application.csproj",
+      "projectPath": "D:\\Tai lieu\\Lap trinh hien dai\\git public\\Sakila.Application\\Sakila.Application.csproj",
       "packagesPath": "C:\\Users\\tru\\.nuget\\packages\\",
-      "outputPath": "D:\\Tai lieu\\Lap trinh hien dai\\Sakila.Application\\obj\\",
+      "outputPath": "D:\\Tai lieu\\Lap trinh hien dai\\git public\\Sakila.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tru\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -528,8 +528,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Tai lieu\\Lap trinh hien dai\\Sakila.Domain\\Sakila.Domain.csproj": {
-              "projectPath": "D:\\Tai lieu\\Lap trinh hien dai\\Sakila.Domain\\Sakila.Domain.csproj"
+            "D:\\Tai lieu\\Lap trinh hien dai\\git public\\Sakila.Domain\\Sakila.Domain.csproj": {
+              "projectPath": "D:\\Tai lieu\\Lap trinh hien dai\\git public\\Sakila.Domain\\Sakila.Domain.csproj"
             }
           }
         }

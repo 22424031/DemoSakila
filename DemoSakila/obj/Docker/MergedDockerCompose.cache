@@ -1,8 +1,8 @@
-name: dockercompose16633186290723701938
+name: dockercompose11450532891419598203
 services:
   demosakila.api:
     build:
-      context: D:\Tai lieu\Lap trinh hien dai\DemoSakila
+      context: D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila
       dockerfile: DemoSakila/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -45,10 +45,10 @@ services:
     user: trutran
     volumes:
     - type: bind
-      source: D:\Tai lieu\Lap trinh hien dai\DemoSakila\mysql
+      source: D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\mysql
       target: /var/lib/my-vol
       bind:
         create_host_path: true
 networks:
   default:
-    name: dockercompose16633186290723701938_default
+    name: dockercompose11450532891419598203_default

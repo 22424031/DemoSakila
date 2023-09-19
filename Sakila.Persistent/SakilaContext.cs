@@ -11,13 +11,15 @@ namespace Sakila.Persistent
 {
     public class SakilaContext : AuditTableDbContext
     {
-        public SakilaContext(DbContextOptions options) : base(options)
+        public SakilaContext(DbContextOptions<SakilaContext> options) : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SakilaContext).Assembly);
         }
         public DbSet<Actor> actor { get; set; }
+        public DbSet<City> city { get; set; }
     }
 }

@@ -11,9 +11,9 @@ namespace Sakila.Domain
     public class Actor : BaseDomainEntity
     {
         [Key]
-        public int Actor_id { get; set; }
-        public string First_Name {get;set;}
-        public string Last_Name { get; set; }
-      
+        public int actor_id { get; set; }
+        public string first_name {get;set;}
+        public string last_name { get; set; }
+
     }
 }

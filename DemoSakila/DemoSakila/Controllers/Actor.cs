@@ -32,5 +32,20 @@ namespace DemoSakila.API.Controllers
             var data = await _mediator.Send(request);
             return data;
         }
+        [HttpPost("AddAsync")]
+        public async Task<ActorDto> AddAsync([FromForm] CreateActor actor)
+        {
+
+            var request = new AddActorRequest {  ActorDto = actor };
+            var data = await _mediator.Send(request);
+            return data;
+        }
+        [HttpPost("DeleteByIdAsync")]
+        public async Task<bool> DeleteByIdAsync(int id)
+        {
+            var request = new RemoveActorRequest {  ActorId = id };
+            return await _mediator.Send(request);
+           
+        }
     }
 }

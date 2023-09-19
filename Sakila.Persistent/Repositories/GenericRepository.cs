@@ -20,6 +20,7 @@ namespace Sakila.Persistent.Repositories
         public async Task<T> Add(T entity)
         {
             await _dbContext.AddAsync(entity);
+           
             return entity;
         }
 

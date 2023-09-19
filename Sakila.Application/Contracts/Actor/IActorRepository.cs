@@ -8,5 +8,6 @@ namespace Sakila.Application.Contracts.Actor
 {
     public interface IActorRepository : IGenericRepository<Domain.Actor>
     {
+        Task SaveChange();
     }
 }

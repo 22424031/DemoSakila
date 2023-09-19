@@ -5,13 +5,13 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoSakila.API", "DemoSakila\DemoSakila.API.csproj", "{1A340CB7-39A6-4D7A-94D2-45AF36774553}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{93E98B42-B045-4460-90AB-FC90B4A5DC27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sakila.Application", "..\Sakila.Application\Sakila.Application.csproj", "{128D0CB8-7EB3-4E17-A5FE-36CFE6A29711}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sakila.Application", "..\Sakila.Application\Sakila.Application.csproj", "{128D0CB8-7EB3-4E17-A5FE-36CFE6A29711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sakila.Domain", "..\Sakila.Domain\Sakila.Domain.csproj", "{45B0354C-00B0-47C0-A556-772969954878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sakila.Domain", "..\Sakila.Domain\Sakila.Domain.csproj", "{45B0354C-00B0-47C0-A556-772969954878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sakila.Persistent", "..\Sakila.Persistent\Sakila.Persistent.csproj", "{0E166D7F-7F8E-4CE6-B719-0D26118F0288}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sakila.Persistent", "..\Sakila.Persistent\Sakila.Persistent.csproj", "{0E166D7F-7F8E-4CE6-B719-0D26118F0288}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A5A938F1-7AE9-45A1-AE7B-FA485F2E3E3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{1A340CB7-39A6-4D7A-94D2-45AF36774553}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A340CB7-39A6-4D7A-94D2-45AF36774553}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A340CB7-39A6-4D7A-94D2-45AF36774553}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93E98B42-B045-4460-90AB-FC90B4A5DC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93E98B42-B045-4460-90AB-FC90B4A5DC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93E98B42-B045-4460-90AB-FC90B4A5DC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93E98B42-B045-4460-90AB-FC90B4A5DC27}.Release|Any CPU.Build.0 = Release|Any CPU
 		{128D0CB8-7EB3-4E17-A5FE-36CFE6A29711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{128D0CB8-7EB3-4E17-A5FE-36CFE6A29711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{128D0CB8-7EB3-4E17-A5FE-36CFE6A29711}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{0E166D7F-7F8E-4CE6-B719-0D26118F0288}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E166D7F-7F8E-4CE6-B719-0D26118F0288}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E166D7F-7F8E-4CE6-B719-0D26118F0288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5A938F1-7AE9-45A1-AE7B-FA485F2E3E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5A938F1-7AE9-45A1-AE7B-FA485F2E3E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5A938F1-7AE9-45A1-AE7B-FA485F2E3E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5A938F1-7AE9-45A1-AE7B-FA485F2E3E3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
