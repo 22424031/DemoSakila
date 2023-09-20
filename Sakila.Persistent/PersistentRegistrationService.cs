@@ -15,7 +15,7 @@ namespace Sakila.Persistent
             {
                 string conectionString = configuration.GetConnectionString("sakila");
                 MySqlServerVersion version = new(new Version(8, 0, 0));
-                string conectStringMysql = "server=127.0.0.1;port=3307;database=sakila;user=trutran;password=wp";
+                string conectStringMysql = "server=127.0.0.1;port=3306;database=sakila;user=root;password=123qwe@@AA";
                 x.UseMySql(conectStringMysql, version);
             });
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));

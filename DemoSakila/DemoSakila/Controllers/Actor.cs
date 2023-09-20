@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Sakila.Application.Feature.Actor.Requests;
 using Sakila.Application.Dtos.Actors;
 using MediatR;
@@ -16,7 +15,7 @@ namespace DemoSakila.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GetListAsync")]
+        [HttpGet()]
         public async Task<ActionResult<IReadOnlyList<ActorDto>>> GetListAsync()
         {
 
@@ -24,7 +23,7 @@ namespace DemoSakila.API.Controllers
             var datas = await _mediator.Send(request);
             return datas.ToList();
         }
-        [HttpGet("GetByIdAsync")]
+        [HttpGet("{id}")]
         public async Task<ActorDto> GetByIdAsync(int id)
         {
 
@@ -32,15 +31,24 @@ namespace DemoSakila.API.Controllers
             var data = await _mediator.Send(request);
             return data;
         }
-        [HttpPost("AddAsync")]
-        public async Task<ActorDto> AddAsync([FromForm] CreateActor actor)
+        [HttpPost()]
+        public async Task<ActorDto> AddAsync([FromBody] CreateActor actor)
         {
 
             var request = new AddActorRequest {  ActorDto = actor };
             var data = await _mediator.Send(request);
             return data;
         }
-        [HttpPost("DeleteByIdAsync")]
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateAsync(int id, [FromForm] ActorDto actor)
+        {
+            actor.Actor_id = id;
+            var request = new UpdateActorRequest { ActorDto = actor };
+            var isSuccess = await _mediator.Send(request);
+            return StatusCode(isSuccess ? 200 : 500);
+        }
+        [HttpDelete("{id}")]
         public async Task<bool> DeleteByIdAsync(int id)
         {
             var request = new RemoveActorRequest {  ActorId = id };

@@ -19,6 +19,10 @@ namespace DemoSakila.API.Controllers
         public async Task<ActionResult<IReadOnlyList<CityDto>>> GetListAsync(){
             var request =  new GetCityListRequest();
             var data = await _mediator.Send(request);
+            if(data == null)
+            {
+                return StatusCode(204);
+            }
             return data.ToList();
         }
     }
