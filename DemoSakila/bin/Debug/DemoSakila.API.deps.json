@@ -331,6 +331,9 @@
         }
       },
       "Sakila.Domain/1.0.0": {
+        "dependencies": {
+          "Pomelo.EntityFrameworkCore.MySql": "6.0.2"
+        },
         "runtime": {
           "Sakila.Domain.dll": {}
         }

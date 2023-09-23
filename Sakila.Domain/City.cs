@@ -2,17 +2,22 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sakila.Domain
 {
     public class City : BaseDomainEntity
     {
+        //public City()
+        //{
+        //    Addresses = new HashSet<Address>();
+        //}
         [Key]
-        public int city_id { get; set; }
-        public string city { get; set; }
-        public int country_id { get; set; }
+        public int CityId { get; set; }
+
+        public string city { get; set; } = null!;
+        public ushort CountryId { get; set; }
+
+       // public virtual Country Country { get; set; } = null!;
+       // public virtual ICollection<Address> Addresses { get; set; }
     }
 }

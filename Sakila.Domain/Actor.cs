@@ -2,18 +2,21 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sakila.Domain
 {
-    public class Actor : BaseDomainEntity
+    public class Actor  : BaseDomainEntity
     {
+        //public Actor()
+        //{
+        //    FilmActors = new HashSet<FilmActor>();
+        //}
         [Key]
-        public int actor_id { get; set; }
-        public string first_name {get;set;}
-        public string last_name { get; set; }
+        public int Actor_Id { get; set; }
+        public string First_Name { get; set; } = null!;
+        public string Last_Name { get; set; } = null!;
+     
 
+      //  public virtual ICollection<FilmActor> FilmActors { get; set; }
     }
 }
