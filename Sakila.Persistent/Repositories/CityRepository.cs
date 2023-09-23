@@ -11,16 +11,16 @@ namespace Sakila.Persistent.Repositories
 {
     public class CityRepository : GenericRepository<City>, ICityRepository
     {
-        //private readonly SakilaContext _abcConect;
+        private readonly SakilaContext _sakilaContext;
         public CityRepository(SakilaContext dbContext) : base(dbContext)
         {
-           // this._abcConect = dbContext;
+           _sakilaContext = dbContext;
         }
 
         public async Task<City> SearchCity(string cityname)
         {
-            return null;
-           //return await _abcConect.city.FirstOrDefaultAsync(x => x.city  == cityname);
+            City rs = await _sakilaContext.city.FirstOrDefaultAsync(x => x.city == cityname);
+            return rs;
         }
     }
 }
