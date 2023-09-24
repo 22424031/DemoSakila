@@ -5,15 +5,13 @@ using System.Collections.Generic;
 
 namespace Sakila.Domain;
 
-public partial class Actor
+public partial class Category
 {
-    public ushort ActorId { get; set; }
+    public byte CategoryId { get; set; }
 
-    public string FirstName { get; set; }
-
-    public string LastName { get; set; }
+    public string Name { get; set; }
 
     public DateTime LastUpdate { get; set; }
 
-    public virtual ICollection<FilmActor> FilmActor { get; set; } = new List<FilmActor>();
+    public virtual ICollection<FilmCategory> FilmCategory { get; set; } = new List<FilmCategory>();
 }

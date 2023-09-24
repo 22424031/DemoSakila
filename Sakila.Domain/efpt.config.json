@@ -1,0 +1,131 @@
+﻿{
+   "CodeGenerationMode": 3,
+   "ContextClassName": "sakilaContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "Sakila.Domain",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 2,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "actor",
+         "ObjectType": 0
+      },
+      {
+         "Name": "address",
+         "ObjectType": 0
+      },
+      {
+         "Name": "category",
+         "ObjectType": 0
+      },
+      {
+         "Name": "city",
+         "ObjectType": 0
+      },
+      {
+         "Name": "country",
+         "ObjectType": 0
+      },
+      {
+         "Name": "customer",
+         "ObjectType": 0
+      },
+      {
+         "Name": "film",
+         "ObjectType": 0
+      },
+      {
+         "Name": "film_actor",
+         "ObjectType": 0
+      },
+      {
+         "Name": "film_category",
+         "ObjectType": 0
+      },
+      {
+         "Name": "film_text",
+         "ObjectType": 0
+      },
+      {
+         "Name": "inventory",
+         "ObjectType": 0
+      },
+      {
+         "Name": "language",
+         "ObjectType": 0
+      },
+      {
+         "Name": "payment",
+         "ObjectType": 0
+      },
+      {
+         "Name": "rental",
+         "ObjectType": 0
+      },
+      {
+         "Name": "staff",
+         "ObjectType": 0
+      },
+      {
+         "Name": "store",
+         "ObjectType": 0
+      },
+      {
+         "Name": "actor_info",
+         "ObjectType": 3
+      },
+      {
+         "Name": "customer_list",
+         "ObjectType": 3
+      },
+      {
+         "Name": "film_list",
+         "ObjectType": 3
+      },
+      {
+         "Name": "nicer_but_slower_film_list",
+         "ObjectType": 3
+      },
+      {
+         "Name": "sales_by_film_category",
+         "ObjectType": 3
+      },
+      {
+         "Name": "sales_by_store",
+         "ObjectType": 3
+      },
+      {
+         "Name": "staff_list",
+         "ObjectType": 3
+      }
+   ],
+   "UiHint": "mysql-sakila",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

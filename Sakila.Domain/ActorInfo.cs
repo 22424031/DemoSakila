@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Sakila.Domain;
 
-public partial class Actor
+public partial class ActorInfo
 {
     public ushort ActorId { get; set; }
 
@@ -13,7 +13,5 @@ public partial class Actor
 
     public string LastName { get; set; }
 
-    public DateTime LastUpdate { get; set; }
-
-    public virtual ICollection<FilmActor> FilmActor { get; set; } = new List<FilmActor>();
+    public string FilmInfo { get; set; }
 }
