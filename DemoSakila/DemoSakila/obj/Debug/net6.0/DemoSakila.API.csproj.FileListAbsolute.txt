@@ -93,3 +93,13 @@ D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\DemoSakila\obj\Debug\net6.0
 D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.genruntimeconfig.cache
 D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\DemoSakila\obj\Debug\net6.0\ref\DemoSakila.API.dll
 D:\Tai lieu\Lap trinh hien dai\git public\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.MvcApplicationPartsAssemblyInfo.cs
+E:\Learning\Github_Repositories\DemoSakila\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.csproj.AssemblyReference.cache
+E:\Learning\Github_Repositories\DemoSakila\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learning\Github_Repositories\DemoSakila\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.AssemblyInfoInputs.cache
+E:\Learning\Github_Repositories\DemoSakila\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.AssemblyInfo.cs
+E:\Learning\Github_Repositories\DemoSakila\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.csproj.CoreCompileInputs.cache
+E:\Learning\Github_Repositories\DemoSakila\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.MvcApplicationPartsAssemblyInfo.cs
+E:\Learning\Github_Repositories\DemoSakila\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.MvcApplicationPartsAssemblyInfo.cache
+E:\Learning\Github_Repositories\DemoSakila\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.dll
+E:\Learning\Github_Repositories\DemoSakila\DemoSakila\DemoSakila\obj\Debug\net6.0\refint\DemoSakila.API.dll
+E:\Learning\Github_Repositories\DemoSakila\DemoSakila\DemoSakila\obj\Debug\net6.0\DemoSakila.API.pdb

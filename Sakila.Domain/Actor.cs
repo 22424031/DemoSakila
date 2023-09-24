@@ -2,40 +2,33 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-=======
 using System.ComponentModel.DataAnnotations;
->>>>>>> 3d945b1de4a8534d7f920ba8042ea88050f35e7e
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Sakila.Domain;
 
+[Table("actor")]
+[Index("LastName", Name = "idx_actor_last_name")]
 public partial class Actor
 {
-<<<<<<< HEAD
+    [Key]
+    [Column("actor_id")]
     public ushort ActorId { get; set; }
 
+    [Required]
+    [Column("first_name")]
+    [StringLength(45)]
     public string FirstName { get; set; }
 
+    [Required]
+    [Column("last_name")]
+    [StringLength(45)]
     public string LastName { get; set; }
 
+    [Column("last_update", TypeName = "timestamp")]
     public DateTime LastUpdate { get; set; }
 
+    [InverseProperty("Actor")]
     public virtual ICollection<FilmActor> FilmActor { get; set; } = new List<FilmActor>();
 }
-=======
-    public class Actor  : BaseDomainEntity
-    {
-        //public Actor()
-        //{
-        //    FilmActors = new HashSet<FilmActor>();
-        //}
-        [Key]
-        public int Actor_Id { get; set; }
-        public string First_Name { get; set; } = null!;
-        public string Last_Name { get; set; } = null!;
-     
-
-      //  public virtual ICollection<FilmActor> FilmActors { get; set; }
-    }
-}
->>>>>>> 3d945b1de4a8534d7f920ba8042ea88050f35e7e

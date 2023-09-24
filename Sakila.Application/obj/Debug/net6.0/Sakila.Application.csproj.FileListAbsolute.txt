@@ -1,0 +1,45 @@
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\bin\Debug\net6.0\Sakila.Application.deps.json
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\bin\Debug\net6.0\Sakila.Application.dll
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\bin\Debug\net6.0\Sakila.Application.pdb
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\bin\Debug\net6.0\Sakila.Domain.dll
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\bin\Debug\net6.0\Sakila.Domain.pdb
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\obj\Debug\net6.0\Sakila.Application.csproj.AssemblyReference.cache
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\obj\Debug\net6.0\Sakila.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\obj\Debug\net6.0\Sakila.Application.AssemblyInfoInputs.cache
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\obj\Debug\net6.0\Sakila.Application.AssemblyInfo.cs
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\obj\Debug\net6.0\Sakila.Application.csproj.CoreCompileInputs.cache
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\obj\Debug\net6.0\Sakila.Application.csproj.CopyComplete
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\obj\Debug\net6.0\Sakila.Application.dll
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\obj\Debug\net6.0\refint\Sakila.Application.dll
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\obj\Debug\net6.0\Sakila.Application.pdb
+D:\Tai lieu\Lap trinh hien dai\Sakila.Application\obj\Debug\net6.0\ref\Sakila.Application.dll
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\bin\Debug\net6.0\Sakila.Application.deps.json
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\bin\Debug\net6.0\Sakila.Application.dll
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\bin\Debug\net6.0\Sakila.Application.pdb
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\bin\Debug\net6.0\Sakila.Domain.dll
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\bin\Debug\net6.0\Sakila.Domain.pdb
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\obj\Debug\net6.0\Sakila.Application.csproj.AssemblyReference.cache
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\obj\Debug\net6.0\Sakila.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\obj\Debug\net6.0\Sakila.Application.AssemblyInfoInputs.cache
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\obj\Debug\net6.0\Sakila.Application.AssemblyInfo.cs
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\obj\Debug\net6.0\Sakila.Application.csproj.CoreCompileInputs.cache
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\obj\Debug\net6.0\Sakila.Application.csproj.CopyComplete
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\obj\Debug\net6.0\Sakila.Application.dll
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\obj\Debug\net6.0\refint\Sakila.Application.dll
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\obj\Debug\net6.0\Sakila.Application.pdb
+D:\Tai lieu\Lap trinh hien dai\git public\Sakila.Application\obj\Debug\net6.0\ref\Sakila.Application.dll
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\bin\Debug\net6.0\Sakila.Application.deps.json
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\bin\Debug\net6.0\Sakila.Application.dll
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\bin\Debug\net6.0\Sakila.Application.pdb
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\bin\Debug\net6.0\Sakila.Domain.dll
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\bin\Debug\net6.0\Sakila.Domain.pdb
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\obj\Debug\net6.0\Sakila.Application.csproj.AssemblyReference.cache
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\obj\Debug\net6.0\Sakila.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\obj\Debug\net6.0\Sakila.Application.AssemblyInfoInputs.cache
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\obj\Debug\net6.0\Sakila.Application.AssemblyInfo.cs
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\obj\Debug\net6.0\Sakila.Application.csproj.CoreCompileInputs.cache
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\obj\Debug\net6.0\Sakila.Application.csproj.CopyComplete
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\obj\Debug\net6.0\Sakila.Application.dll
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\obj\Debug\net6.0\refint\Sakila.Application.dll
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\obj\Debug\net6.0\Sakila.Application.pdb
+E:\Learning\Github_Repositories\DemoSakila\Sakila.Application\obj\Debug\net6.0\ref\Sakila.Application.dll

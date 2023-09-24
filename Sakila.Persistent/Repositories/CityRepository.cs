@@ -19,7 +19,7 @@ namespace Sakila.Persistent.Repositories
 
         public async Task<City> SearchCity(string cityname)
         {
-            City rs = await _sakilaContext.city.FirstOrDefaultAsync(x => x.city == cityname);
+            City rs = await _sakilaContext.city.FirstOrDefaultAsync(x => x.CityName == cityname);
             return rs;
         }
     }

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DemoSakila.API.props" />
+</Project>

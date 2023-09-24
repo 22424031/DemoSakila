@@ -2,43 +2,35 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-=======
 using System.ComponentModel.DataAnnotations;
->>>>>>> 3d945b1de4a8534d7f920ba8042ea88050f35e7e
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Sakila.Domain;
 
+[Table("city")]
+[Index("CountryId", Name = "idx_fk_country_id")]
 public partial class City
 {
-<<<<<<< HEAD
+    [Key]
+    [Column("city_id")]
     public ushort CityId { get; set; }
 
-    public string City1 { get; set; }
+    [Required]
+    [Column("city")]
+    [StringLength(50)]
+    public string CityName { get; set; }
 
+    [Column("country_id")]
     public ushort CountryId { get; set; }
 
+    [Column("last_update", TypeName = "timestamp")]
     public DateTime LastUpdate { get; set; }
 
+    [InverseProperty("City")]
     public virtual ICollection<Address> Address { get; set; } = new List<Address>();
 
+    [ForeignKey("CountryId")]
+    [InverseProperty("City")]
     public virtual Country Country { get; set; }
 }
-=======
-    public class City : BaseDomainEntity
-    {
-        //public City()
-        //{
-        //    Addresses = new HashSet<Address>();
-        //}
-        [Key]
-        public int CityId { get; set; }
-
-        public string city { get; set; } = null!;
-        public ushort CountryId { get; set; }
-
-       // public virtual Country Country { get; set; } = null!;
-       // public virtual ICollection<Address> Addresses { get; set; }
-    }
-}
->>>>>>> 3d945b1de4a8534d7f920ba8042ea88050f35e7e
