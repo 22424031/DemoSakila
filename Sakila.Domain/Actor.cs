@@ -2,11 +2,16 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+=======
+using System.ComponentModel.DataAnnotations;
+>>>>>>> 3d945b1de4a8534d7f920ba8042ea88050f35e7e
 
 namespace Sakila.Domain;
 
 public partial class Actor
 {
+<<<<<<< HEAD
     public ushort ActorId { get; set; }
 
     public string FirstName { get; set; }
@@ -17,3 +22,20 @@ public partial class Actor
 
     public virtual ICollection<FilmActor> FilmActor { get; set; } = new List<FilmActor>();
 }
+=======
+    public class Actor  : BaseDomainEntity
+    {
+        //public Actor()
+        //{
+        //    FilmActors = new HashSet<FilmActor>();
+        //}
+        [Key]
+        public int Actor_Id { get; set; }
+        public string First_Name { get; set; } = null!;
+        public string Last_Name { get; set; } = null!;
+     
+
+      //  public virtual ICollection<FilmActor> FilmActors { get; set; }
+    }
+}
+>>>>>>> 3d945b1de4a8534d7f920ba8042ea88050f35e7e

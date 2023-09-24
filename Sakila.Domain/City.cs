@@ -2,11 +2,16 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+=======
+using System.ComponentModel.DataAnnotations;
+>>>>>>> 3d945b1de4a8534d7f920ba8042ea88050f35e7e
 
 namespace Sakila.Domain;
 
 public partial class City
 {
+<<<<<<< HEAD
     public ushort CityId { get; set; }
 
     public string City1 { get; set; }
@@ -19,3 +24,21 @@ public partial class City
 
     public virtual Country Country { get; set; }
 }
+=======
+    public class City : BaseDomainEntity
+    {
+        //public City()
+        //{
+        //    Addresses = new HashSet<Address>();
+        //}
+        [Key]
+        public int CityId { get; set; }
+
+        public string city { get; set; } = null!;
+        public ushort CountryId { get; set; }
+
+       // public virtual Country Country { get; set; } = null!;
+       // public virtual ICollection<Address> Addresses { get; set; }
+    }
+}
+>>>>>>> 3d945b1de4a8534d7f920ba8042ea88050f35e7e
