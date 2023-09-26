@@ -13,13 +13,15 @@ builder.Services.ConfigurateApplicationService();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddConnections();
+builder.Services.AddOpenApiDocument();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseOpenApi();
+    app.UseSwaggerUi3();
+   
 }
 
 app.UseHttpsRedirection();
