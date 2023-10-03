@@ -84,6 +84,7 @@ namespace DemoSakila.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<BaseResponse<ActorDto>>> AddAsync([FromBody] CreateActor actor)
         {
+
             var request = new CreateActorRequest {  ActorDto = actor };
             var data = await _mediator.Send(request);
             return data;

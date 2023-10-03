@@ -21,9 +21,17 @@ namespace DemoSakila.API.Controllers
             var data = await _mediator.Send(request);
             if(data == null)
             {
+                
                 return StatusCode(204);
             }
             return data.ToList();
         }
+        [HttpGet("GetError")]
+        public async Task<bool> GetError()
+        {
+            throw new Exception("demo error");
+     
+        }
+        
     }
 }

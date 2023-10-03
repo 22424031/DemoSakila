@@ -1,4 +1,5 @@
 
+using RoundTheCode.LoggerDb.Shared.Logging.DbLoggerObjects;
 using Sakila.Application;
 using Sakila.Persistent;
 
@@ -14,6 +15,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddConnections();
 builder.Services.AddOpenApiDocument();
+builder.Logging.AddDbLogger(options =>
+{
+    builder.Configuration.GetSection("Logging").GetSection("Database").GetSection("Options").Bind(options);
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

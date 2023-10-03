@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sakila.Persistent", "..\Sak
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A5A938F1-7AE9-45A1-AE7B-FA485F2E3E3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoundTheCode.LoggerDb.Shared.Logging.DbLoggerObjects", "..\RoundTheCode.LoggerDb.Shared.Logging.DbLoggerObjects\RoundTheCode.LoggerDb.Shared.Logging.DbLoggerObjects.csproj", "{77A4F4C2-F060-4288-AFCC-BCF786146662}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A5A938F1-7AE9-45A1-AE7B-FA485F2E3E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5A938F1-7AE9-45A1-AE7B-FA485F2E3E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5A938F1-7AE9-45A1-AE7B-FA485F2E3E3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77A4F4C2-F060-4288-AFCC-BCF786146662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A4F4C2-F060-4288-AFCC-BCF786146662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A4F4C2-F060-4288-AFCC-BCF786146662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A4F4C2-F060-4288-AFCC-BCF786146662}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

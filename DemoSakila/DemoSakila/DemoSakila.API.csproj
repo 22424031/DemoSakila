@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\RoundTheCode.LoggerDb.Shared.Logging.DbLoggerObjects\RoundTheCode.LoggerDb.Shared.Logging.DbLoggerObjects.csproj" />
     <ProjectReference Include="..\..\Sakila.Application\Sakila.Application.csproj" />
     <ProjectReference Include="..\..\Sakila.Persistent\Sakila.Persistent.csproj" />
   </ItemGroup>
