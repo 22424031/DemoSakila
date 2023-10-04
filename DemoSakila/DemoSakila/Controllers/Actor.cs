@@ -3,6 +3,7 @@ using Sakila.Application.Feature.Actor.Requests;
 using Sakila.Application.Dtos.Actors;
 using MediatR;
 using Sakila.Application.Dtos.Common;
+using DemoSakila.Controllers;
 
 namespace DemoSakila.API.Controllers
 {
@@ -11,9 +12,12 @@ namespace DemoSakila.API.Controllers
     public class Actor : ControllerBase
     {
         private readonly IMediator _mediator;
-       public Actor(IMediator mediator)
+        private readonly ILogger<Actor> _logger;
+
+        public Actor(IMediator mediator, ILogger<Actor> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
         /// <summary>
         /// Get All Actor List
@@ -31,7 +35,7 @@ namespace DemoSakila.API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<ActionResult<IReadOnlyList<ActorDto>>> GetListAsync()
         {
-
+            _logger.LogInformation("hello");
             var request = new GetActorListAsyncRequest();
             var datas = await _mediator.Send(request);
             return datas.ToList();
@@ -55,7 +59,6 @@ namespace DemoSakila.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActorDto> GetByIdAsync(int id)
         {
-
             var request = new GetActorByIdRequest { id = id};
             var data = await _mediator.Send(request);
             return data;

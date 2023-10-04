@@ -1,0 +1,5 @@
+2023-10-04 12:31:34.240 +07:00 [INF] Now listening on: https://localhost:7287
+2023-10-04 12:31:34.291 +07:00 [INF] Now listening on: http://localhost:5287
+2023-10-04 12:31:34.297 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-10-04 12:31:34.298 +07:00 [INF] Hosting environment: Development
+2023-10-04 12:31:34.299 +07:00 [INF] Content root path: F:\LienThongDaiHoc\CongNgheLapTrinhHienDai\ST_Sakila\DemoSakila\DemoSakila\
