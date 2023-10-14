@@ -21,15 +21,16 @@ try
     builder.Host
         .UseSerilog((ctx, lc) => lc
         .WriteTo.Console(new JsonFormatter(), LogEventLevel.Error)
-        .WriteTo.File(new JsonFormatter(), "C:\\Users\\nguye\\Desktop\\demo-serilog\\log.txt", LogEventLevel.Information,
-            rollingInterval: RollingInterval.Day,
-            rollOnFileSizeLimit: true)
-        .WriteTo.File(new JsonFormatter(), "C:\\Users\\nguye\\Desktop\\demo-serilog\\log-error.txt", LogEventLevel.Error,
-            rollingInterval: RollingInterval.Day,
-            rollOnFileSizeLimit: true)
-        .WriteTo.MySQL(
-            "server=127.0.0.1;port=3306;database=sakila;user=root;password=123qwe@@AA", "Logs",
+        //.WriteTo.File(new JsonFormatter(), "C:\\Users\\tru\\Desktop\\log.txt", LogEventLevel.Information,
+        //    rollingInterval: RollingInterval.Day,
+        //    rollOnFileSizeLimit: true)
+        //.WriteTo.File(new JsonFormatter(), "C:\\Users\\tru\\Desktop\\log-error.txt", LogEventLevel.Error,
+        //    rollingInterval: RollingInterval.Day,
+        //    rollOnFileSizeLimit: true)
+        .WriteTo.MySQL(builder.Configuration.GetConnectionString("sakila_log"), "Logs_info",
             LogEventLevel.Information)
+         .WriteTo.MySQL(builder.Configuration.GetConnectionString("sakila_log"), "Logs_error",
+            LogEventLevel.Error)
         .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
         .WriteTo.Console());
 
