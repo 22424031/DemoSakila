@@ -15,6 +15,7 @@ namespace Sakila.Application.Profiles
             CreateMap<Domain.Actor, Dtos.Actors.CreateActor>().ReverseMap();
             CreateMap<Domain.staff, Dtos.Staff.StaffDto>().ReverseMap();
             CreateMap<Domain.City, Dtos.Citys.CityDto>().ReverseMap();
+            CreateMap<Domain.refresh_token, Dtos.RefreshTokens.refresh_tokenDto>().ReverseMap();
         }
     }
 }

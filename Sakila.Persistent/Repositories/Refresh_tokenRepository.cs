@@ -10,5 +10,8 @@ namespace Sakila.Persistent.Repositories
 {
     public class Refresh_tokenRepository : GenericRepository<refresh_token>, IRefresh_tokenRepository
     {
+        public Refresh_tokenRepository(SakilaContext dbContext) : base(dbContext)
+        {
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace Sakila.Persistent
             services.AddScoped<Application.Contracts.Actor.IActorRepository,Repositories.ActorRepository>();
             services.AddScoped<Application.Contracts.Citys.ICityRepository, Repositories.CityRepository>();
             services.AddScoped<Application.Contracts.Staffs.IStaffRepository, Repositories.StaffRepository>();
+            services.AddScoped<Application.Contracts.Refresh_tokens.IRefresh_tokenRepository, Repositories.Refresh_tokenRepository>();
             return services;
         }
 
