@@ -20,6 +20,7 @@ namespace Sakila.Persistent
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
             services.AddScoped<Application.Contracts.Actor.IActorRepository,Repositories.ActorRepository>();
             services.AddScoped<Application.Contracts.Citys.ICityRepository, Repositories.CityRepository>();
+            services.AddScoped<Application.Contracts.Staffs.IStaffRepository, Repositories.StaffRepository>();
             return services;
         }
 

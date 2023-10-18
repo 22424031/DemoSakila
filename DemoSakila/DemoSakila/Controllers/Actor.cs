@@ -3,15 +3,18 @@ using Sakila.Application.Feature.Actor.Requests;
 using Sakila.Application.Dtos.Actors;
 using MediatR;
 using Sakila.Application.Dtos.Common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DemoSakila.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class Actor : ControllerBase
     {
         private readonly IMediator _mediator;
         private readonly ILogger<Actor> _logger;
+
        public Actor(IMediator mediator, ILogger<Actor> logger)
         {
             _mediator = mediator;
@@ -28,29 +31,33 @@ namespace DemoSakila.API.Controllers
         ///</remarks>
         ///<response code="200">Get Data sucessfull</response>
         ///<response code="204">No record found in table</response>
-        [HttpGet()]
+        ///<response code="401">UnAuthorization</response>
+        [HttpGet("GetListAsync")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<IReadOnlyList<ActorDto>>> GetListAsync()
         {
-            throw new Exception("test exception");
+    
             var request = new GetActorListAsyncRequest();
             var datas = await _mediator.Send(request);
             return datas.ToList();
         }
 
-      /// <summary>
-      /// Get actor by id
-      /// </summary>
-      /// <param name="id">2</param>
-      /// <returns>an actor found by id</returns>
-     ///<remark>
-     ///sample request:
-     ///Get/
-     ///</remark>
-     ///<response code="200">found actor</response>
-     ///<response code="204">not found actor</response>
-     ///<response code="400">bad request</response>
+        /// <summary>
+        /// Get actor by id
+        /// </summary>
+        /// <param name="id">2</param>
+        /// <returns>an actor found by id</returns>
+        ///<remark>
+        ///sample request:
+        ///Get/
+        ///</remark>
+        ///<response code="200">found actor</response>
+        ///<response code="204">not found actor</response>
+        ///<response code="400">bad request</response>
+     
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]

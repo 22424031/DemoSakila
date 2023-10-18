@@ -13,7 +13,7 @@ namespace Sakila.Application.Profiles
         {
             CreateMap<Domain.Actor, Dtos.Actors.ActorDto>().ReverseMap();
             CreateMap<Domain.Actor, Dtos.Actors.CreateActor>().ReverseMap();
-
+            CreateMap<Domain.staff, Dtos.Staff.StaffDto>().ReverseMap();
             CreateMap<Domain.City, Dtos.Citys.CityDto>().ReverseMap();
         }
     }
