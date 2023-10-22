@@ -84,11 +84,11 @@ namespace DemoSakila.API.Controllers
             return baseResponse;
         }
         [HttpGet("GetTokenRefeshToken")]
-        public async Task<ActionResult<BaseResponse<BaseTokenDto>>> GetTokenRefeshToken(string userName, string password)
+        public async Task<ActionResult<BaseResponse<BaseTokenDto>>> GetTokenRefeshToken(string userName, string password,string keyEncrypt)
         {
             var baseResponse = new BaseResponse<BaseTokenDto>();
             var basetoken = new BaseTokenDto();
-            var refreshToken = await _mediator.Send(new GetRefreshTokenRequest { UserName = userName, Password = password, key = configuration["keyEncrypt"] });
+            var refreshToken = await _mediator.Send(new GetRefreshTokenRequest { UserName = userName, Password = password, key = keyEncrypt });
             if (refreshToken is null)
             {
                 baseResponse.ErrorMessage = "refresh not exists";
