@@ -1,5 +1,6 @@
 Create table refresh_token (
 	client_id varchar(500),
 	token varchar(500),
-	staff_id int
+	staff_id int,
+	last_update datetime
 );

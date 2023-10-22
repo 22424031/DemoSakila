@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sakila.Application.Dtos.RefreshTokens
 {
-    public class refresh_tokenDto : BaseDto
+    public class Refresh_tokenDto : BaseDto
     {
         public int Staff_Id { get; set; }
         public string token { get; set; } = null!;

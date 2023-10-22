@@ -5,13 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using MediatR;
 using Sakila.Application.Dtos.RefreshTokens;
-using Sakila.Application.Dtos.Staff;
 
 namespace Sakila.Application.Feature.RefreshToken.Request
 {
-    public class UpdateTokenRequest : IRequest<bool>
+    public class ExistsStaffIDRequest: IRequest<bool>
     {
-        public Refresh_tokenDto Refresh_token { get; set; }
-       
+        public int id { get; set; }
     }
 }

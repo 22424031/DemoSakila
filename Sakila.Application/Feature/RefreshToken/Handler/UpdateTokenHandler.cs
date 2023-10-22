@@ -26,15 +26,13 @@ namespace Sakila.Application.Feature.RefreshToken.Handler
         public async Task<bool> Handle(UpdateTokenRequest request, CancellationToken cancellationToken)
         {
             var dto = _mapper.Map<refresh_token>(request.Refresh_token);
-            var Isuser = await _refresh_TokenRepository.Exists(request.Refresh_token.Staff_Id);
-            if (Isuser == true) { 
-                
-            }
-            else
-            {
-
-            }
+            //var Isuser = await _refresh_TokenRepository.Exists(request.Refresh_token.Staff_Id);
+        
+            await _refresh_TokenRepository.Update(dto);
+            await _refresh_TokenRepository.SaveChange();
             return true;
+            
+                   
         }
     }
 }
