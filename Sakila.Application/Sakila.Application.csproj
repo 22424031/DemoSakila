@@ -19,12 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contants\" />
-    <Folder Include="Feature\Film\Handler\" />
-    <Folder Include="Feature\Film\Request\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Sakila.Domain\Sakila.Domain.csproj" />
   </ItemGroup>
 

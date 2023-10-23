@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Sakila.Application.Contracts;
 using Sakila.Persistent.Repositories;
+using Sakila.Application.Contracts.Films;
 
 namespace Sakila.Persistent
 {
@@ -22,6 +23,7 @@ namespace Sakila.Persistent
             services.AddScoped<Application.Contracts.Citys.ICityRepository, Repositories.CityRepository>();
             services.AddScoped<Application.Contracts.Staffs.IStaffRepository, Repositories.StaffRepository>();
             services.AddScoped<Application.Contracts.Refresh_tokens.IRefresh_tokenRepository, Repositories.Refresh_tokenRepository>();
+            services.AddScoped<IFilmRepository, FilmRepository>();
             return services;
         }
 

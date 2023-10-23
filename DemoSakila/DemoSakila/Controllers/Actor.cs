@@ -4,6 +4,7 @@ using Sakila.Application.Dtos.Actors;
 using MediatR;
 using Sakila.Application.Dtos.Common;
 using Microsoft.AspNetCore.Authorization;
+using DemoSakila.API.Authentication;
 
 namespace DemoSakila.API.Controllers
 {
@@ -62,6 +63,7 @@ namespace DemoSakila.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+       
         public async Task<ActorDto> GetByIdAsync(int id)
         {
             //_logger.LogInformation("test LogInformation ");
