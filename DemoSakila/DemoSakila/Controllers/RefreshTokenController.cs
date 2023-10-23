@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Sakila.Application.Contracts.Staffs;
@@ -7,11 +6,9 @@ using Sakila.Application.Contracts.Refresh_tokens;
 using Sakila.Application.Feature.RefreshToken.Request;
 using Sakila.Application.Dtos.Common;
 using Sakila.Application.Dtos.RefreshTokens;
-using Sakila.Application.Feature.Staff.Request;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Org.BouncyCastle.Crypto.Generators;
 using Microsoft.AspNetCore.Authorization;
 using Sakila.Application.Ententions;
 
@@ -38,24 +35,34 @@ namespace DemoSakila.API.Controllers
         {
             var baseResponse = new BaseResponse<BaseTokenDto>();
             var jwtHandler = new JwtSecurityTokenHandler();
-            var jsonToken = jwtHandler.ReadJwtToken(_token); 
-            var id = jsonToken.Claims.First(x => x.Type == "Id").Value; 
+            var jsonToken = jwtHandler.ReadJwtToken(_token);
+            var id = jsonToken.Claims.First(x => x.Type == "Id").Value;
             string userName = jsonToken.Claims.First(x => x.Type == "UserName").Value;
             string pass = jsonToken.Claims.First(x => x.Type == "Password").Value;
             var baseToken = new BaseTokenDto();
-            string refreshToken = GetTokenWithExp(Convert.ToInt32( configuration["TimeLimitRefreshToken"]), userName, pass, id);
+            string refreshToken = GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitRefreshToken"]), userName, pass, id);
             baseToken.Password = EnCryptExtension.Encrypt(pass, configuration["keyEncrypt"]);
             baseToken.UserName = EnCryptExtension.Encrypt(userName, configuration["keyEncrypt"]);
             baseToken.Token = GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitToken"]), userName, pass, id);
             baseToken.TokenRefresh = refreshToken;
             baseResponse.Data = baseToken;
-            Refresh_tokenDto refreshTokenDto = new();
-            refreshTokenDto.Staff_Id = Convert.ToInt32(id);
-            refreshTokenDto.token = refreshToken;
-            var result = await _mediator.Send(new UpdateTokenRequest {
-                 Refresh_token = refreshTokenDto
-            }) ;
-            if (result) return baseResponse;
+
+            Refresh_tokenDto refreshTokenDto = new()
+            {
+                Staff_Id = Convert.ToInt32(id),
+                token = refreshToken
+            };
+
+            var result = await _mediator.Send(new UpdateTokenRequest
+            {
+                Refresh_token = refreshTokenDto
+            });
+
+            if (result)
+            {
+                baseResponse.Status = 200;
+                return baseResponse;
+            }
             else
             {
                 baseResponse.ErrorMessage = "Error Internal server update token fail";
@@ -64,15 +71,14 @@ namespace DemoSakila.API.Controllers
                 baseResponse.Data = null;
                 return baseResponse;
             }
-            baseResponse.Status = 200;
-            return baseResponse;
+
         }
         private string GetTokenWithExp(int minute, string userName, string password, string staff_Id)
         {
             var issuer = configuration["jwtBearer:Issuer"];
             var audience = configuration["jwtBearer:Audience"];
-            var key = Encoding.ASCII.GetBytes
-            (configuration["jwtBearer:SigningKey"]);
+            var key = Encoding.ASCII.GetBytes(configuration["jwtBearer:SigningKey"]);
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
