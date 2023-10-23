@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using DemoSakila.API.Authentication;
 using Sakila.Application.Dtos.Common;
 using Sakila.Application.Dtos.Films;
 using Sakila.Application.Feature.Film.Request;

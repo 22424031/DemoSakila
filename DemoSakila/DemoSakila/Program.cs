@@ -1,5 +1,5 @@
 
-using DemoSakila.API.Authentication;
+
 using DemoSakila.API.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -64,7 +64,7 @@ try
             ValidateIssuerSigningKey = true
         };
     });
-    builder.Services.AddScoped<ApiKeyAuthFilter>();
+  
     builder.Services.AddAuthorization();
     var app = builder.Build();
 

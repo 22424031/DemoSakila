@@ -1,4 +1,4 @@
-﻿using DemoSakila.API.Authentication;
+﻿
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Sakila.Application.Dtos.Citys;
@@ -19,7 +19,7 @@ namespace DemoSakila.API.Controllers
             _mediator = mediator;
         }
         [HttpGet("GetListAsync")]
-        [ApiKeyAuthFilter]
+
         public async Task<ActionResult<BaseResponse<IReadOnlyList<FilmDto>>>> GetListAsync()
         {
             var baseResponse = new BaseResponse<IReadOnlyList<FilmDto>>();

@@ -40,4 +40,8 @@
     <ProjectReference Include="..\..\Sakila.Persistent\Sakila.Persistent.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Authentication\" />
+  </ItemGroup>
+
 </Project>

@@ -43,28 +43,7 @@ namespace DemoSakila.API.Controllers
             string userName = jsonToken.Claims.First(x => x.Type == "UserName").Value;
             string pass = jsonToken.Claims.First(x => x.Type == "Password").Value;
             var baseToken = new BaseTokenDto();
-            string refreshToken = GetTokenWithExp(Convert.ToInt32( configuration["TimeLimitRefreshToken"]), userName, pass, id);
-            baseToken.Password = EnCryptExtension.Encrypt(pass, configuration["keyEncrypt"]);
-            baseToken.UserName = EnCryptExtension.Encrypt(userName, configuration["keyEncrypt"]);
-            baseToken.Token = GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitToken"]), userName, pass, id);
-            baseToken.TokenRefresh = refreshToken;
-            baseResponse.Data = baseToken;
-            Refresh_tokenDto refreshTokenDto = new();
-            refreshTokenDto.Staff_Id = Convert.ToInt32(id);
-            refreshTokenDto.token = refreshToken;
-            var result = await _mediator.Send(new UpdateTokenRequest {
-                 Refresh_token = refreshTokenDto
-            }) ;
-            if (result) return baseResponse;
-            else
-            {
-                baseResponse.ErrorMessage = "Error Internal server update token fail";
-                baseResponse.ErrorCode = "ErrorInternalServer";
-                baseResponse.Status = 500;
-                baseResponse.Data = null;
-                return baseResponse;
-            }
-            baseResponse.Status = 200;
+           
             return baseResponse;
         }
         private string GetTokenWithExp(int minute, string userName, string password, string staff_Id)

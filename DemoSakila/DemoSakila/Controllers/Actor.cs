@@ -4,7 +4,7 @@ using Sakila.Application.Dtos.Actors;
 using MediatR;
 using Sakila.Application.Dtos.Common;
 using Microsoft.AspNetCore.Authorization;
-using DemoSakila.API.Authentication;
+
 
 namespace DemoSakila.API.Controllers
 {

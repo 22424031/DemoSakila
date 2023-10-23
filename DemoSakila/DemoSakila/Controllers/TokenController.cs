@@ -35,51 +35,6 @@ namespace DemoSakila.API.Controllers
         {
             var baseResponse = new BaseResponse<BaseTokenDto>();
             var basetoken = new BaseTokenDto();
-            var user = await _mediator.Send(new LoginRequest { UserName = userName, Password = password });
-            if (user is null)
-            {
-                baseResponse.ErrorMessage = "User not exists";
-                baseResponse.ErrorCode = "User Not Found";
-                baseResponse.Status = 400;
-                return baseResponse;
-            }
-            var refreshToken = this.GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitRefreshToken"]), userName, password, user.Staff_Id.ToString());
-            baseResponse.ErrorMessage = "";
-            baseResponse.ErrorCode = "";
-            baseResponse.Status = 200;
-            basetoken.Token = this.GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitToken"]), userName, password, user.Staff_Id.ToString());
-            basetoken.TokenRefresh = refreshToken;
-            basetoken.Password = EnCryptExtension.Encrypt(password, configuration["keyEncrypt"]);
-            basetoken.UserName = EnCryptExtension.Encrypt(userName, configuration["keyEncrypt"]);
-            baseResponse.Data = basetoken;
-            Refresh_tokenDto refreshTokenDto = new();
-            refreshTokenDto.Staff_Id = Convert.ToInt32(user.Staff_Id);
-            refreshTokenDto.token = refreshToken;
-            var isStaff = await _mediator.Send(new ExistsStaffIDRequest { id = user.Staff_Id });
-            if (isStaff)//udpate token 
-            {
-                var result = await _mediator.Send(new UpdateTokenRequest { Refresh_token = refreshTokenDto });
-                if (!result)
-                {
-                    baseResponse.ErrorMessage = "Update refreshToken fail";
-                    baseResponse.ErrorCode = "UpdateFail";
-                    baseResponse.Status = 500;
-                    baseResponse.Data = null;
-                    return baseResponse;
-                }
-            }
-            else
-            {
-                var result = await _mediator.Send(new CreateTokenRequest { refresh_TokenDto = refreshTokenDto });
-                if (result is null)
-                {
-                    baseResponse.ErrorMessage = "Update refreshToken fail";
-                    baseResponse.ErrorCode = "UpdateFail";
-                    baseResponse.Status = 500;
-                    baseResponse.Data = null;
-                    return baseResponse;
-                }
-            }
             
             return baseResponse;
         }
@@ -88,19 +43,7 @@ namespace DemoSakila.API.Controllers
         {
             var baseResponse = new BaseResponse<BaseTokenDto>();
             var basetoken = new BaseTokenDto();
-            var refreshToken = await _mediator.Send(new GetRefreshTokenRequest { UserName = userName, Password = password, key = keyEncrypt });
-            if (refreshToken is null)
-            {
-                baseResponse.ErrorMessage = "refresh not exists";
-                baseResponse.ErrorCode = "refreshNotFound";
-                baseResponse.Status = 400;
-                return baseResponse;
-            }
-            baseResponse.ErrorMessage = "";
-            baseResponse.ErrorCode = "";
-            baseResponse.Status = 200;
-            basetoken.TokenRefresh = refreshToken.TokenRefresh;
-            baseResponse.Data = basetoken;
+         
             return baseResponse;
         }
         private string GetTokenWithExp(int minute,string userName, string password, string staff_Id)
