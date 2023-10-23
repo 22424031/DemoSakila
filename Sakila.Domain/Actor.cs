@@ -17,6 +17,6 @@ namespace Sakila.Domain
         public string Last_Name { get; set; } = null!;
      
 
-      //  public virtual ICollection<FilmActor> FilmActors { get; set; }
+        public virtual ICollection<FilmActor> FilmActors { get; set; }
     }
 }

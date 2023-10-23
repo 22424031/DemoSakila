@@ -1,13 +1,15 @@
-﻿using System;
+﻿using Sakila.Domain.Common;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sakila.Domain
 {
-    public partial class FilmActor
+    public class FilmActor:BaseDomainEntity
     {
-        public ushort ActorId { get; set; }
-        public ushort FilmId { get; set; }
-        public DateTime LastUpdate { get; set; }
+        [Key]
+        public int Actor_Id { get; set; }
+        public int Film_Id { get; set; }
 
         public virtual Actor Actor { get; set; } = null!;
         public virtual Film Film { get; set; } = null!;

@@ -29,7 +29,7 @@ namespace Sakila.Domain
 
         //public virtual Language Language { get; set; } = null!;
         //public virtual Language? OriginalLanguage { get; set; }
-        //public virtual ICollection<FilmActor> FilmActors { get; set; }
+        public virtual ICollection<FilmActor> FilmActors { get; set; }
         //public virtual ICollection<FilmCategory> FilmCategories { get; set; }
         //public virtual ICollection<Inventory> Inventories { get; set; }
     }
