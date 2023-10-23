@@ -22,6 +22,7 @@ namespace Sakila.Persistent
         public DbSet<Actor> actor { get; set; }
         public DbSet<City> city { get; set; }
         public DbSet<staff> staff { get; set; }
+        public DbSet<Film> film { get; set; }
         public DbSet<refresh_token> refresh_token { get; set; }
     }
 }
