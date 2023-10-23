@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sakila.Application.Dtos.Common
+﻿namespace Sakila.Application.Dtos.Common
 {
     public class BaseResponse<T>
     {

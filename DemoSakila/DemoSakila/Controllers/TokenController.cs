@@ -48,9 +48,9 @@ namespace DemoSakila.API.Controllers
             baseResponse.ErrorCode = "";
             baseResponse.Status = 200;
             basetoken.Token = this.GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitToken"]), userName, password, user.Staff_Id.ToString());
-            basetoken.TokenRefresh = refreshToken;
-            basetoken.Password = EnCryptExtension.Encrypt(password, configuration["keyEncrypt"]);
-            basetoken.UserName = EnCryptExtension.Encrypt(userName, configuration["keyEncrypt"]);
+            basetoken.RefreshToken = refreshToken;
+            basetoken.Password = EnCryptExtension.Encrypt(password, configuration["keyEncrypt"]!);
+            basetoken.UserName = EnCryptExtension.Encrypt(userName, configuration["keyEncrypt"]!);
             baseResponse.Data = basetoken;
             Refresh_tokenDto refreshTokenDto = new();
             refreshTokenDto.Staff_Id = Convert.ToInt32(user.Staff_Id);
@@ -80,7 +80,8 @@ namespace DemoSakila.API.Controllers
                     return baseResponse;
                 }
             }
-            
+
+            baseResponse.Data.Email = userName;
             return baseResponse;
         }
         [HttpGet("GetTokenRefeshToken")]
@@ -99,7 +100,7 @@ namespace DemoSakila.API.Controllers
             baseResponse.ErrorMessage = "";
             baseResponse.ErrorCode = "";
             baseResponse.Status = 200;
-            basetoken.TokenRefresh = refreshToken.TokenRefresh;
+            basetoken.RefreshToken = refreshToken.RefreshToken;
             baseResponse.Data = basetoken;
             return baseResponse;
         }

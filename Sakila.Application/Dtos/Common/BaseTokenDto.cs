@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sakila.Application.Dtos.Common
+﻿namespace Sakila.Application.Dtos.Common
 {
     public class BaseTokenDto
     {
         public string? Token { get; set; }
-        public string? TokenRefresh { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        public string? RefreshToken { get; set; }
+        public string UserName { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
     }
 }

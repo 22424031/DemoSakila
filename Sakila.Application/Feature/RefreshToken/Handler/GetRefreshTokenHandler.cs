@@ -34,7 +34,7 @@ namespace Sakila.Application.Feature.RefreshToken.Handler
             var staff = await _refresh_TokenRepository.Get(user.Staff_Id);
             if(staff is not null)
             {
-                baseToken.TokenRefresh = staff.token;
+                baseToken.RefreshToken = staff.token;
                 return baseToken;
             }
             return null;

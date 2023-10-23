@@ -29,6 +29,11 @@ namespace DemoSakila.API.Controllers
             configuration = configurationmain;
             _staffRepository = staffRepository;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_token"></param>
+        /// <returns></returns>
         [HttpGet("GetToken")]
         [Authorize]
         public async Task<ActionResult<BaseResponse<BaseTokenDto>>> GetToken(string _token)
@@ -37,16 +42,16 @@ namespace DemoSakila.API.Controllers
             var jwtHandler = new JwtSecurityTokenHandler();
             var jsonToken = jwtHandler.ReadJwtToken(_token);
             var id = jsonToken.Claims.First(x => x.Type == "Id").Value;
-            string userName = jsonToken.Claims.First(x => x.Type == "UserName").Value;
-            string pass = jsonToken.Claims.First(x => x.Type == "Password").Value;
+            var userName = jsonToken.Claims.First(x => x.Type == "UserName").Value;
+            var password = jsonToken.Claims.First(x => x.Type == "Password").Value;
             var baseToken = new BaseTokenDto();
-            string refreshToken = GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitRefreshToken"]), userName, pass, id);
-            baseToken.Password = EnCryptExtension.Encrypt(pass, configuration["keyEncrypt"]);
-            baseToken.UserName = EnCryptExtension.Encrypt(userName, configuration["keyEncrypt"]);
-            baseToken.Token = GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitToken"]), userName, pass, id);
-            baseToken.TokenRefresh = refreshToken;
+            var refreshToken = GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitRefreshToken"]), userName, password, id);
+            baseToken.Password = EnCryptExtension.Encrypt(password, configuration["keyEncrypt"]!);
+            baseToken.UserName = EnCryptExtension.Encrypt(userName, configuration["keyEncrypt"]!);
+            baseToken.Token = GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitToken"]), userName, password, id);
+            baseToken.RefreshToken = refreshToken;
             baseResponse.Data = baseToken;
-
+            
             Refresh_tokenDto refreshTokenDto = new()
             {
                 Staff_Id = Convert.ToInt32(id),
@@ -61,6 +66,7 @@ namespace DemoSakila.API.Controllers
             if (result)
             {
                 baseResponse.Status = 200;
+                baseResponse.Data.Email = userName;
                 return baseResponse;
             }
             else
