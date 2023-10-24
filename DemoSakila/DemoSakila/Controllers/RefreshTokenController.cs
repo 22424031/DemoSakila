@@ -16,6 +16,7 @@ namespace DemoSakila.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class RefreshTokenController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -35,7 +36,6 @@ namespace DemoSakila.API.Controllers
         /// <param name="_token"></param>
         /// <returns></returns>
         [HttpGet("GetToken")]
-        [Authorize]
         public async Task<ActionResult<BaseResponse<BaseTokenDto>>> GetToken(string _token)
         {
             var baseResponse = new BaseResponse<BaseTokenDto>();
@@ -51,7 +51,7 @@ namespace DemoSakila.API.Controllers
             baseToken.Token = GetTokenWithExp(Convert.ToInt32(configuration["TimeLimitToken"]), userName, password, id);
             baseToken.RefreshToken = refreshToken;
             baseResponse.Data = baseToken;
-            
+
             Refresh_tokenDto refreshTokenDto = new()
             {
                 Staff_Id = Convert.ToInt32(id),

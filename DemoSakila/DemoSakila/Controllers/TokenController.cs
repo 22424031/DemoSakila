@@ -11,28 +11,31 @@ using System.Text;
 using Sakila.Application.Ententions;
 using Sakila.Application.Dtos.Common;
 using Sakila.Application.Dtos.RefreshTokens;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DemoSakila.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
-
+    [AllowAnonymous]
     public class TokenController : ControllerBase
     {
         private readonly IMediator _mediator;
         private readonly IConfiguration configuration;
         private readonly IStaffRepository _staffRepository;
-        
+
         public TokenController(IMediator mediator, IStaffRepository staffRepository, IConfiguration configurationmain)
         {
             _mediator = mediator;
             configuration = configurationmain;
             _staffRepository = staffRepository;
         }
-        [HttpGet("GetToken")]
-        public async Task<ActionResult<BaseResponse<BaseTokenDto>>> GetToken(string userName, string password)
+        [HttpPost("GetToken")]
+        public async Task<ActionResult<BaseResponse<BaseTokenDto>>> GetToken([FromBody] LoginDto loginDto)
         {
+            string userName = loginDto?.userName ?? throw new Exception();
+            string password = loginDto?.password ?? throw new Exception();
+
             var baseResponse = new BaseResponse<BaseTokenDto>();
             var basetoken = new BaseTokenDto();
             var user = await _mediator.Send(new LoginRequest { UserName = userName, Password = password });
@@ -56,6 +59,7 @@ namespace DemoSakila.API.Controllers
             refreshTokenDto.Staff_Id = Convert.ToInt32(user.Staff_Id);
             refreshTokenDto.token = refreshToken;
             var isStaff = await _mediator.Send(new ExistsStaffIDRequest { id = user.Staff_Id });
+
             if (isStaff)//udpate token 
             {
                 var result = await _mediator.Send(new UpdateTokenRequest { Refresh_token = refreshTokenDto });
@@ -84,8 +88,9 @@ namespace DemoSakila.API.Controllers
             baseResponse.Data.Email = userName;
             return baseResponse;
         }
-        [HttpGet("GetTokenRefeshToken")]
-        public async Task<ActionResult<BaseResponse<BaseTokenDto>>> GetTokenRefeshToken(string userName, string password,string keyEncrypt)
+        [HttpPost("GetTokenRefeshToken")]
+        [Authorize]
+        public async Task<ActionResult<BaseResponse<BaseTokenDto>>> GetTokenRefeshToken(string userName, string password, string keyEncrypt)
         {
             var baseResponse = new BaseResponse<BaseTokenDto>();
             var basetoken = new BaseTokenDto();
@@ -104,7 +109,7 @@ namespace DemoSakila.API.Controllers
             baseResponse.Data = basetoken;
             return baseResponse;
         }
-        private string GetTokenWithExp(int minute,string userName, string password, string staff_Id)
+        private string GetTokenWithExp(int minute, string userName, string password, string staff_Id)
         {
             var issuer = configuration["jwtBearer:Issuer"];
             var audience = configuration["jwtBearer:Audience"];
@@ -135,10 +140,21 @@ namespace DemoSakila.API.Controllers
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 var jwtToken = tokenHandler.WriteToken(token);
                 stringToken = tokenHandler.WriteToken(token);
-                
+
             }
             catch (Exception ex) { }
             return stringToken;
         }
+    }
+
+    public class LoginDto
+    {
+        public string userName { get; set; }
+        public string password { get; set; }
+    }
+
+    public class UpdateTokenDto
+    {
+
     }
 }

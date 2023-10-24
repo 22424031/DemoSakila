@@ -42,7 +42,9 @@ namespace Sakila.Persistent.Repositories
 
         public async Task<IReadOnlyList<T>> GetAll()
         {
-            return await _dbContext.Set<T>().ToListAsync();
+            return await _dbContext.Set<T>()
+                .Take(20)
+                .ToListAsync();
         }
 
         public async Task Update(T entity)

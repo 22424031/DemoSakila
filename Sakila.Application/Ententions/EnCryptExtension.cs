@@ -9,54 +9,37 @@ namespace Sakila.Application.Ententions
 {
     public class EnCryptExtension
     {
-       
         public static string Encrypt(string toEncrypt, string key)
         {
-            bool useHashing = true;
-            byte[] keyArray;
-            byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
-
-            if (useHashing)
+            using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
             {
-                MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
-                keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                tdes.Key = Encoding.UTF8.GetBytes(key);
+                tdes.Mode = CipherMode.ECB;
+                tdes.Padding = PaddingMode.PKCS7;
+
+                using (ICryptoTransform cTransform = tdes.CreateEncryptor())
+                {
+                    byte[] toEncryptArray = Encoding.UTF8.GetBytes(toEncrypt);
+                    byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+                    return Convert.ToBase64String(resultArray);
+                }
             }
-            else
-                keyArray = UTF8Encoding.UTF8.GetBytes(key);
-
-            TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
-            tdes.Key = keyArray;
-            tdes.Mode = CipherMode.ECB;
-            tdes.Padding = PaddingMode.PKCS7;
-
-            ICryptoTransform cTransform = tdes.CreateEncryptor();
-            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
-
-            return Convert.ToBase64String(resultArray, 0, resultArray.Length);
         }
         public static string Decrypt(string toDecrypt, string key)
         {
-            bool useHashing = true;
-            byte[] keyArray;
-            byte[] toEncryptArray = Convert.FromBase64String(toDecrypt);
-
-            if (useHashing)
+            using (TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider())
             {
-                MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
-                keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                tdes.Key = Encoding.UTF8.GetBytes(key);
+                tdes.Mode = CipherMode.ECB;
+                tdes.Padding = PaddingMode.PKCS7;
+
+                using (ICryptoTransform cTransform = tdes.CreateDecryptor())
+                {
+                    byte[] toDecryptArray = Convert.FromBase64String(toDecrypt);
+                    byte[] resultArray = cTransform.TransformFinalBlock(toDecryptArray, 0, toDecryptArray.Length);
+                    return Encoding.UTF8.GetString(resultArray);
+                }
             }
-            else
-                keyArray = UTF8Encoding.UTF8.GetBytes(key);
-
-            TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
-            tdes.Key = keyArray;
-            tdes.Mode = CipherMode.ECB;
-            tdes.Padding = PaddingMode.PKCS7;
-
-            ICryptoTransform cTransform = tdes.CreateDecryptor();
-            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
-
-            return UTF8Encoding.UTF8.GetString(resultArray);
         }
     }
 }

@@ -44,6 +44,10 @@ try
     });
     builder.Services.AddConnections();
     builder.Services.AddOpenApiDocument();
+    builder.Services.AddCors(options => options.AddPolicy(name: "angularApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+    }));
     builder.Services.AddAuthentication(options =>
     {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -66,6 +70,7 @@ try
     });
     builder.Services.AddScoped<ApiKeyAuthFilter>();
     builder.Services.AddAuthorization();
+
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
@@ -78,14 +83,15 @@ try
     }
   
     app.UseSerilogRequestLogging();
-
+    app.UseCors("angularApp");
     app.UseHttpsRedirection();
+
     app.UseRouting();
     app.UseAuthentication();
-
     app.UseAuthorization();
 
     app.MapControllers();
+   
 
     //app.UseMiddleware<RequestResponseLoggingMiddleware>();
     app.UseEndpoints(endpoints =>
