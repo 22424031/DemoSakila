@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Sakila.Application.Contracts;
 using Sakila.Persistent.Repositories;
 using Sakila.Application.Contracts.Films;
+using Sakila.Application.Contracts.FilmActors;
 
 namespace Sakila.Persistent
 {
@@ -24,6 +25,7 @@ namespace Sakila.Persistent
             services.AddScoped<Application.Contracts.Staffs.IStaffRepository, Repositories.StaffRepository>();
             services.AddScoped<Application.Contracts.Refresh_tokens.IRefresh_tokenRepository, Repositories.Refresh_tokenRepository>();
             services.AddScoped<IFilmRepository, FilmRepository>();
+            services.AddScoped<IFilmActorRepository, FilmActorRepository>();
             return services;
         }
 
