@@ -15,6 +15,7 @@ namespace DemoSakila.API.Controllers
         {
             _mediator = mediator;
         }
+
         [HttpGet("GetListAsync")]
         public async Task<ActionResult<IReadOnlyList<CityDto>>> GetListAsync(){
             var request =  new GetCityListRequest();

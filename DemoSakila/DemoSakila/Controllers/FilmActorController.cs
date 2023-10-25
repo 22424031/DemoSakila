@@ -7,6 +7,8 @@ using Sakila.Application.Dtos.Films;
 using Sakila.Application.Feature.Film.Request;
 using Sakila.Application.Dtos.FilmActor;
 using Sakila.Application.Feature.FilmActor.Request;
+using MySqlX.XDevAPI;
+using System.Net;
 
 namespace DemoSakila.API.Controllers
 {
@@ -19,8 +21,8 @@ namespace DemoSakila.API.Controllers
         {
             _mediator = mediator;
         }
+
         [HttpGet("GetListAsync")]
-    
         public async Task<ActionResult<BaseResponse<object>>> GetListAsync()
         {
             var baseResponse = new BaseResponse<object>();
@@ -36,5 +38,8 @@ namespace DemoSakila.API.Controllers
             baseResponse.Data = data;
             return baseResponse;
         }
-    }
+
+        
+           
+}
 }
