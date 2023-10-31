@@ -8,6 +8,7 @@ using Sakila.Application.Dtos.Films;
 using Sakila.Application.Feature.Film.Request;
 using Sakila.Application.Feature.FilmActor.Request;
 using System.Net;
+using System.Text;
 
 namespace DemoSakila.API.Controllers
 {
@@ -87,6 +88,5 @@ namespace DemoSakila.API.Controllers
 
             return baseResponse;
         }
-
     }
 }

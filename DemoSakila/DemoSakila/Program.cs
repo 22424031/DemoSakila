@@ -1,6 +1,8 @@
 
 using DemoSakila.API.Authentication;
+using DemoSakila.API.Controllers;
 using DemoSakila.API.Middleware;
+using DemoSakila.API.Realtime;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -71,6 +73,10 @@ try
     builder.Services.AddScoped<ApiKeyAuthFilter>();
     builder.Services.AddAuthorization();
 
+    //Signalr
+    builder.Services.AddSignalR();
+    builder.Services.AddSingleton<TimerManager>();
+
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
@@ -79,7 +85,6 @@ try
         app.UseOpenApi();
        // app.UseSwagger();
         app.UseSwaggerUi3();
-
     }
   
     app.UseSerilogRequestLogging();
@@ -91,13 +96,16 @@ try
     app.UseAuthorization();
 
     app.MapControllers();
-   
 
     //app.UseMiddleware<RequestResponseLoggingMiddleware>();
     app.UseEndpoints(endpoints =>
     {
         endpoints.MapControllers();
     });
+
+    //Signalr
+    app.MapHub<ActivityHub>("/activity");
+
     app.Run();
 }
 catch (Exception ex)

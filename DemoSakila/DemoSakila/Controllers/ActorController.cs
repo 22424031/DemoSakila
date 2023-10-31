@@ -5,21 +5,26 @@ using MediatR;
 using Sakila.Application.Dtos.Common;
 using Microsoft.AspNetCore.Authorization;
 using DemoSakila.API.Authentication;
+using System.Security.Claims;
+using DemoSakila.API.Realtime;
+using Microsoft.AspNetCore.SignalR;
 
 namespace DemoSakila.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
 
-    public class Actor : ControllerBase
+    public class ActorController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly ILogger<Actor> _logger;
+        private readonly ILogger<ActorController> _logger;
+        private readonly IHubContext<ActivityHub> _hub;
 
-       public Actor(IMediator mediator, ILogger<Actor> logger)
+        public ActorController(IMediator mediator, ILogger<ActorController> logger, IHubContext<ActivityHub> hub)
         {
             _mediator = mediator;
             _logger = logger;
+            _hub = hub;
         }
         /// <summary>
         /// Get All Actor List
@@ -67,8 +72,19 @@ namespace DemoSakila.API.Controllers
         public async Task<ActorDto> GetByIdAsync(int id)
         {
             //_logger.LogInformation("test LogInformation ");
+
+            if (HttpContext.User.Identity is ClaimsIdentity identity)
+            {
+                var username = identity?.FindFirst("UserName")?.Value;
+                if (!string.IsNullOrWhiteSpace(username))
+                {
+                    ActivityManager.AddActivity(username + " access detail page. " + DateTime.Now.ToString());
+                }
+            }
+
             var request = new GetActorByIdRequest { id = id};
             var data = await _mediator.Send(request);
+
             return data;
         }
         /// <summary>

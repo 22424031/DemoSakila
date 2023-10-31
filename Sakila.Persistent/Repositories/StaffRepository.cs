@@ -22,7 +22,8 @@ namespace Sakila.Persistent.Repositories
         }
         public async Task<staff> Login(string userName, string password)
         {
-            var user = await _contextSakila.staff.FirstOrDefaultAsync(x => x.Username.ToLower() == userName.ToLower() && x.Password.ToLower() == password.ToLower());
+            var user = await _contextSakila.staff
+                .FirstOrDefaultAsync(x => x.Username.ToLower() == userName.ToLower() && x.Password!.ToLower() == password.ToLower());
             return user;
         }
     }
