@@ -58,7 +58,6 @@ try
         var jwt = builder.Configuration.GetSection("jwtBearer");
         o.TokenValidationParameters = new TokenValidationParameters
         {
-
             ValidIssuer = builder.Configuration["jwtBearer:Issuer"],
             ValidAudience = builder.Configuration["jwtBearer:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["jwtBearer:SigningKey"])),
